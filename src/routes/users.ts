@@ -7,7 +7,12 @@ const router = express.Router();
 router.post("/", usersController.addUser);
 
 router.get("/cookie", (req: Request, res: Response) => {
-  res.cookie("cookie1", "cookievalue", { sameSite: "strict" }).send();
+  res
+    .cookie("cookie1", "cookievalue", {
+      sameSite: "strict",
+      domain: ".onrender.com",
+    })
+    .send();
 });
 
 router.get("/cookie/test", (req: Request, res: Response) => {
