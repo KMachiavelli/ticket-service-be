@@ -1,13 +1,12 @@
 import express, { Express } from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import mongoConnect from "./src/db/mongo/connect";
 import cookieParser from "cookie-parser";
-import dotenv from "dotenv";
 import ticketsRouter from "./src/routes/tickets";
 import usersRouter from "./src/routes/users";
 import cors from "cors";
 import { corsConfig } from "./src/config/cors";
-
-dotenv.config();
 
 const app: Express = express();
 
