@@ -9,8 +9,9 @@ router.post("/", usersController.addUser);
 router.get("/cookie", (req: Request, res: Response) => {
   res
     .cookie("cookie1", "cookievalue", {
-      sameSite: "strict",
+      sameSite: "lax",
       domain: ".onrender.com",
+      secure: true,
     })
     .send();
 });
